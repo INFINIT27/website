@@ -1,2 +1,2 @@
 # website
-Create a simple website.
+Building a website.
