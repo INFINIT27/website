@@ -1,6 +1,9 @@
 /* Container for the whole page */
 .outer-div {
+    min-height: 100vh;
     font-family: Arial, sans-serif;
+    background-color: hsl(282, 100%, 22%);
+    background-size: cover;
 }
 
 /* Styles for the notes section */

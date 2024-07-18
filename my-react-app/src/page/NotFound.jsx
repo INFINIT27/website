@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import "../styles/NotFound.css";
 
 function NotFound() {

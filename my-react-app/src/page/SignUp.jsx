@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
 import React from 'react';
-import './SignUp.css';
+import '../styles/SignUp.css';
 import { CgProfile } from "react-icons/cg";
 import { MdOutlinePassword } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
@@ -64,7 +64,13 @@ function SignUp({route}) {
         }
 
         else if(!CheckPasswordRequirements(password) || password.length < 10) {
-            alert(`You are missing password requirements. Please check what you typed! ${password}`);
+            alert(`You are missing password requirements. Ensure you have the following:\n
+                ${password.length < 10 ? "- At least 10 characters.\n" : ""}
+                ${isSpec ? "" : "- At least one special character. (., -, /, !, etc)\n"}
+                ${isUpper ? "" : "- At least one uppercase letter.\n"}
+                ${isLower ? "" : "- At least one lowercase letter.\n"}
+                ${isNums ? "" : "- At least one number.\n"}
+                `);
         }
         else {
             handleSubmit(event);

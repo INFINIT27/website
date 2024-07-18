@@ -1,10 +1,9 @@
-import Header from "../components/Header";
 import { useState, useEffect } from 'react';
 import Note from "../components/Note"
 import api from '../api';
 import "../styles/Home.css";
 
-export default function Home() {
+function Home() {
 
     const [notes, setNotes] = useState([]);
     const [content, setContent] = useState("");
@@ -24,7 +23,7 @@ export default function Home() {
     const deleteNote = (id) => {
         api.delete(`/api/notes/delete/${id}/`)
             .then((res) => {
-                if (res.status === 204) alert("Note was deleted");
+                if (res.status < 300) alert("Note was deleted");
                 else alert("Failed to delete note!");
                 getNotes();
             })
@@ -34,8 +33,8 @@ export default function Home() {
     const createNote = (e) => {
         e.preventDefault();
         api.post("/api/notes/", {content, title})
-            .then((res) => { // The status code is different from 204 check your backendd
-                if (res.status === 204) alert("Note created!");
+            .then((res) => {
+                if (res.status < 300) alert("Note created!");
                 else alert("Failed to make note.");
                 getNotes();
             })
@@ -45,12 +44,12 @@ export default function Home() {
     return(
         <div className="outer-div">
             <div>
-                <h2>Notes</h2>
+                <h2 style={{fontSize: "2.5em", textAlign: "center", color: "white", borderBottom: "5px solid  rgb(104, 51, 197)"}}>Notes</h2>
                 {notes.map((note) => (
                     <Note note={note} onDelete={deleteNote} key={note.id} />
                 ))}
             </div>
-            <h2>Create a Note</h2>
+            <h2 style={ {textAlign: "center", color: "white", marginTop: "10px", marginBottom: "10px"} }>Create a Note</h2>
             <form onSubmit={createNote} className="note-form">
                 <label htmlFor="title">Title:</label>
                 <br />
@@ -69,6 +68,7 @@ export default function Home() {
                     name="content"
                     required
                     value={content}
+                    style={ {maxWidth: "100%", minWidth: "100%", minHeight: "50px"} }
                     onChange={(e) => setContent(e.target.value)}
                 ></textarea>
                 <br />
@@ -77,3 +77,5 @@ export default function Home() {
         </div>
     );
 }
+
+export default Home

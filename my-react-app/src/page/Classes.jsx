@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "../styles/Classes.css";
 import ClassDetails from "../components/ClassDetails";
+import { isAuthenticated } from "../constants";
 
 function Classes() {
     const [class_number, setClassNumber] = useState("");
@@ -28,13 +29,24 @@ function Classes() {
 
     const createClass = (e) => {
         e.preventDefault();
-        api.post("/api/classes/", {class_number, class_name, class_description})
-            .then((res) => {
-                if (res.status < 300) alert("Class created!");
-                else alert("Failed to create class!");
-                getClasses();
-            })
-            .catch((err) => alert(err));
+        let classExists = false;
+
+        for(let i = 0; i < classes.length; i++) {
+            if(classes[i].class_number.toLowerCase() === class_number.toLowerCase()) {
+                classExists = true;
+                alert("This class already exists!");
+            }
+        }
+
+        if(!classExists) {
+            api.post("/api/classes/", {class_number, class_name, class_description})
+                .then((res) => {
+                    if (res.status < 300) alert("Class created!");
+                    else alert("Failed to create class!");
+                    getClasses();
+                })
+                .catch((err) => alert(err));
+        }
     }
 
     const removeClass = (id) => {
@@ -73,6 +85,7 @@ function Classes() {
         }
     }
 
+    console.log(isAuthenticated);
     return(
         <div className="background-class">
             <ClassDetails data={classes}/>
