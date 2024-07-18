@@ -78,7 +78,7 @@ function Classes() {
             <ClassDetails data={classes}/>
             <div className="remove-div">
                 <div className="inner-remove-div">
-                    <label className="remove-label">Type Class Number</label>
+                    <label className="remove-label">Type Class Number To Remove</label>
                     <input type="text" placeholder="Enter Class Number" className="remove-text-area" onChange={(e) => handleRemoveClass(e)}/>
                 </div><br />
                 <button onClick={handleRemoveSubmit} className="remove-button">Remove</button>
