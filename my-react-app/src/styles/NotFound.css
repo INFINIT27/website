@@ -1,0 +1,18 @@
+.outer-class {
+    width: 500px;
+    height: 50%;
+    margin: auto;
+    vertical-align: middle;
+    padding-top: 100px;
+}
+
+.outer-class .header-class {
+    font-family: sans-serif, Georgia, 'Times New Roman', Times, serif;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.outer-class .paragraph-class {
+    font-size: 1.2em;
+}

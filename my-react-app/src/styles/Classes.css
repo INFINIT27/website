@@ -1,0 +1,144 @@
+/* DEAL WITH THE FORM INPUT */
+.background-class {
+    background-image: url("../src/assets/background_5.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.outer-add-class {
+    width: 50%;
+    height: 50%;
+    border: 5px solid hsla(224, 56%, 35%, 0.422);
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 0;
+    padding: 20px;
+    border-radius: 20px;
+    font-family: sans-serif, Georgia, 'Times New Roman', Times, serif;
+    box-shadow: 0 0 15px rgb(84, 20, 194);
+    backdrop-filter: blur(50px);
+}
+
+.outer-add-class .inner-div {
+    width: 75%;
+    margin: auto;
+    text-align: center;
+}
+
+.outer-add-class .inner-div .class-label {
+    margin-right: 25px;
+    font-weight: bold;
+}
+
+.outer-add-class .inner-div .class-description {
+    font-weight: bold;
+}
+
+.outer-add-class .inner-div .class-input {
+    text-align: center;
+    width: 40%;
+    background-color: rgb(84, 20, 194);
+    font-size: 1.1em;
+    color: white;
+}
+
+.outer-add-class .inner-div .class-input-description {
+    width: 450px;
+    height: 150px;
+    max-width: 500px;
+    margin-top: 15px;
+    border-width: 3px;
+    color: white;
+    background-color: rgb(84, 20, 194);
+}
+
+.outer-add-class .inner-div .class-input::placeholder {
+    font-size: 0.8em;
+    color: white;
+    opacity: 0.8;
+}
+
+.outer-add-class .inner-div .class-input-description::placeholder {
+    font-size: 0.8em;
+    color: white;
+    opacity: 0.8;
+}
+
+.outer-add-class .inner-div .submit-button {
+    margin-top: 25px;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bolder;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(114, 0, 228);
+    border: 2px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.outer-add-class .inner-div .submit-button:hover {
+    background-color: rgb(75, 0, 150);
+    border-color: white;
+}
+
+/* ------------------------------------------------ */
+
+/* REMOVE TEXT AND BUTTON COMPONENTS */
+
+.background-class .remove-div {
+    margin-top: 15px;
+    width: 500px;
+    height: 100px;
+    border: 5px solid rgb(114, 0, 228);
+    border-radius: 20px;
+    margin: auto;
+    backdrop-filter: blur(50px);
+    text-align: center;
+}
+
+.background-class .remove-div .inner-remove-div {
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
+.background-class .remove-div .inner-remove-div .remove-label {
+    margin-right: 15px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.background-class .remove-div .inner-remove-div .remove-text-area {
+    text-align: center;
+    width: 40%;
+    background-color: rgb(84, 20, 194);
+    font-size: 1.1em;
+    color: white;
+}
+
+.background-class .remove-div .inner-remove-div .remove-text-area::placeholder {
+    font-size: 0.8em;
+    color: white;
+    opacity: 0.8;
+}
+
+.background-class .remove-div .remove-button {
+    color: white;
+    font-weight: bolder;
+    font-size: 1.05em;
+    width: 100px;
+    height: 25px;
+    background-color: rgb(114, 0, 228);
+    border: 2px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.background-class .remove-div .remove-button:hover {
+    background-color: rgb(75, 0, 150);
+    border-color: white;
+}
+/* --------------------------------------------- */
